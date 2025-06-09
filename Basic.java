@@ -1,6 +1,7 @@
-import java.util.*;
-
 class add {
+    static int staticvariable;
+    int a=9;
+    int b=6;
  public int MethodOverloading(int a, int b) {
   return a + b;
  }
@@ -11,6 +12,16 @@ class add {
 
  public float MethodOverloading(float a, float b) {
   return a + b;
+ }
+
+ public static void sub(add obj1){
+     System.out.println("static method "+staticvariable+" "+ obj1.a/obj1.b );
+
+ }
+
+ static {
+     staticvariable=2;
+     System.out.println("static block loads only once we can use for intiliaze the values");
  }
 
 }
@@ -109,6 +120,23 @@ System.out.println("multidimensional");
   sBuffer.append(" something");
 
   System.out.println(sBuffer);
+
+  add.staticvariable=3;
+
+  add staticobject=new add();
+  staticobject.staticvariable=909;
+     System.out.println(staticobject.staticvariable);
+
+     add obj1=new add();
+     add.sub(obj1);
+
+
+
+
+
+
+
+
 
 
  }
